@@ -28,11 +28,26 @@ namespace {
 
 }  // namespace
 
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTableField
+    const TableStruct::entries[] = {
+  {0, 0, 0, ::google::protobuf::internal::kInvalidMask, 0, 0},
+};
+
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
+    const TableStruct::aux[] = {
+  ::google::protobuf::internal::AuxillaryParseTableField(),
+};
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
+    TableStruct::schema[] = {
+  { NULL, NULL, 0, -1, -1, false },
+};
+
 const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SearchRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SearchRequest, query_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SearchRequest, page_number_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SearchRequest, result_per_page_),
@@ -167,7 +182,7 @@ void SearchRequest::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* SearchRequest::descriptor() {
   protobuf_Test_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_Test_2eproto::file_level_metadata[0].descriptor;
+  return protobuf_Test_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const SearchRequest& SearchRequest::default_instance() {
@@ -202,7 +217,8 @@ bool SearchRequest::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string query = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_query()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -217,7 +233,8 @@ bool SearchRequest::MergePartialFromCodedStream(
 
       // int32 page_number = 2;
       case 2: {
-        if (tag == 16u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -230,7 +247,8 @@ bool SearchRequest::MergePartialFromCodedStream(
 
       // int32 result_per_page = 3;
       case 3: {
-        if (tag == 24u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -265,6 +283,9 @@ failure:
 void SearchRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:SearchRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string query = 1;
   if (this->query().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -290,8 +311,10 @@ void SearchRequest::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* SearchRequest::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
   // @@protoc_insertion_point(serialize_to_array_start:SearchRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string query = 1;
   if (this->query().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -368,6 +391,9 @@ void SearchRequest::MergeFrom(const SearchRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:SearchRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.query().size() > 0) {
 
     query_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.query_);
@@ -411,7 +437,7 @@ void SearchRequest::InternalSwap(SearchRequest* other) {
 
 ::google::protobuf::Metadata SearchRequest::GetMetadata() const {
   protobuf_Test_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_Test_2eproto::file_level_metadata[0];
+  return protobuf_Test_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -434,11 +460,12 @@ void SearchRequest::set_query(const ::std::string& value) {
 void SearchRequest::set_query(::std::string&& value) {
   
   query_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:SearchRequest.query)
 }
 #endif
 void SearchRequest::set_query(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   query_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SearchRequest.query)

@@ -63,7 +63,8 @@
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4800)
-#endif //_MSC_VER
+#pragma warning(disable: 4305)
+#endif
 
 // ========================================================================= //
 

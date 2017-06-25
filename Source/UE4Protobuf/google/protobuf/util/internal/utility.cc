@@ -45,22 +45,12 @@
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4018)
-#endif //_MSC_VER
+#endif
 
 namespace google {
 namespace protobuf {
 namespace util {
 namespace converter {
-
-namespace {
-const StringPiece SkipWhiteSpace(StringPiece str) {
-  StringPiece::size_type i;
-  for (i = 0; i < str.size() && isspace(str[i]); ++i) {
-  }
-  GOOGLE_DCHECK(i == str.size() || !isspace(str[i]));
-  return str.substr(i);
-}
-}  // namespace
 
 bool GetBoolOptionOrDefault(
     const google::protobuf::RepeatedPtrField<google::protobuf::Option>& options,

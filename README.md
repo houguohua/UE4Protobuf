@@ -8,10 +8,10 @@ A protobuf source integration for UE4.
 
 * 已测试通过
 	* `Win32`, `Win64`
-	* `Android`
-	* `Mac`
 
 * 未测试
+ 	* `Android`
+	* `Mac`
 	* `Linux`
 	
 ## 如何使用 ##
@@ -26,7 +26,7 @@ A protobuf source integration for UE4.
 * 用 `CMake` 生成 `Visual Studio` 工程
 
 ``` bash
-cd /D protobuf-3.2.0\cmake
+cd /D protobuf-3.3.0\cmake
 
 cmake.exe -G "Visual Studio 14 2015 Win64" .
 ```

@@ -36,7 +36,8 @@
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4018)
-#endif //_MSC_VER
+#endif
+
 
 namespace google {
 namespace protobuf {

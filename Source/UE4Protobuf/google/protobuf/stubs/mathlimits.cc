@@ -37,11 +37,6 @@
 
 #include <google/protobuf/stubs/common.h>
 
-#ifdef _MSC_VER
-#pragma warning(disable: 4305)
-#pragma warning(disable: 4668)
-#endif //_MSC_VER
-
 namespace google {
 namespace protobuf {
 

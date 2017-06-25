@@ -99,7 +99,7 @@
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4310)
-#endif //_MSC_VER
+#endif
 
 namespace google {
 namespace protobuf {

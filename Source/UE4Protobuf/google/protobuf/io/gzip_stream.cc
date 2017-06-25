@@ -33,9 +33,6 @@
 // This file contains the implementation of classes GzipInputStream and
 // GzipOutputStream.
 
-#ifdef _MSC_VER
-#pragma warning(disable: 4668)
-#endif //_MSC_VER
 
 #if HAVE_ZLIB
 #include <google/protobuf/io/gzip_stream.h>

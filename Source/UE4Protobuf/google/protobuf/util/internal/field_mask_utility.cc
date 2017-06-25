@@ -35,7 +35,7 @@
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4018)
-#endif //_MSC_VER
+#endif
 
 namespace google {
 namespace protobuf {
@@ -46,11 +46,6 @@ namespace {
 inline util::Status CallPathSink(PathSinkCallback path_sink,
                                    StringPiece arg) {
   return path_sink->Run(arg);
-}
-
-util::Status CreatePublicError(util::error::Code code,
-                                 const string& message) {
-  return util::Status(code, message);
 }
 
 // Appends a FieldMask path segment to a prefix.
@@ -220,7 +215,7 @@ util::Status DecodeCompactFieldMaskPaths(StringPiece paths,
                           StrCat("Invalid FieldMask '", paths,
                                  "'. Cannot find matching ')' for all '('."));
   }
-  return util::Status::OK;
+  return util::Status();
 }
 
 }  // namespace converter

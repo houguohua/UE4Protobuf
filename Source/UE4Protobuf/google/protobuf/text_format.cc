@@ -60,9 +60,8 @@
 #include <google/protobuf/stubs/stl_util.h>
 
 #ifdef _MSC_VER
-#pragma warning(disable: 4800)
 #pragma warning(disable: 4018)
-#endif //_MSC_VER
+#endif
 
 namespace google {
 namespace protobuf {
@@ -77,18 +76,6 @@ inline bool IsHexNumber(const string& str) {
 inline bool IsOctNumber(const string& str) {
   return (str.length() >= 2 && str[0] == '0' &&
           (str[1] >= '0' && str[1] < '8'));
-}
-
-inline bool GetAnyFieldDescriptors(const Message& message,
-                                   const FieldDescriptor** type_url_field,
-                                   const FieldDescriptor** value_field) {
-    const Descriptor* descriptor = message.GetDescriptor();
-    *type_url_field = descriptor->FindFieldByNumber(1);
-    *value_field = descriptor->FindFieldByNumber(2);
-    return (*type_url_field != NULL &&
-            (*type_url_field)->type() == FieldDescriptor::TYPE_STRING &&
-            *value_field != NULL &&
-            (*value_field)->type() == FieldDescriptor::TYPE_BYTES);
 }
 
 }  // namespace
@@ -1327,6 +1314,7 @@ bool TextFormat::Parser::ParseFromString(const string& input,
   return Parse(&input_stream, output);
 }
 
+
 bool TextFormat::Parser::Merge(io::ZeroCopyInputStream* input,
                                Message* output) {
   ParserImpl parser(output->GetDescriptor(), input, error_collector_,
@@ -1343,6 +1331,7 @@ bool TextFormat::Parser::MergeFromString(const string& input,
   io::ArrayInputStream input_stream(input.data(), input.size());
   return Merge(&input_stream, output);
 }
+
 
 bool TextFormat::Parser::MergeUsingImpl(io::ZeroCopyInputStream* /* input */,
                                         Message* output,
@@ -1391,6 +1380,7 @@ bool TextFormat::Parser::ParseFieldValueFromString(
                                               Message* output) {
   return Parser().MergeFromString(input, output);
 }
+
 
 // ===========================================================================
 

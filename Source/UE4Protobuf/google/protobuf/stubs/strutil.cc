@@ -44,7 +44,7 @@
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4456)
-#endif // _MSC_VER
+#endif
 
 #ifdef _WIN32
 // MSVC has only _snprintf, not snprintf.
